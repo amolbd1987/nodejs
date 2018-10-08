@@ -1,0 +1,27 @@
+//stpes to create express-application generator
+
+$ npm install express-generator -g
+$ express --view=pug myapp
+$ cd myapp
+$ npm install
+
+//On MacOS or Linux
+$ DEBUG=myapp:* npm start
+it creates following directory structure and runs the http://localhost:3000
+
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.pug
+    ├── index.pug
+    └── layout.pug
