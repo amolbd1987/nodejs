@@ -1,0 +1,17 @@
+var express = require('express');
+var app = express();
+
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect('mongodb://localhost:27017/order', (err, client) => {
+    // Client returned
+    var db = client.db('order');
+    var cursor = db.collection('order').find();
+
+    cursor.each(function(err, doc) {
+
+        console.log(doc);
+
+    });
+});
+app.listen(8080) 
