@@ -1,0 +1,22 @@
+{
+  "name": "nodeauth",
+  "version": "1.0.0",
+  "description": "auth",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "keywords": [
+    "auth"
+  ],
+  "author": "amol",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.5",
+    "nodemon": "^1.18.4"
+  }
+}
