@@ -1,0 +1,42 @@
+/*const fetchData= callback =>{
+  setTimeout(()=>{
+    callback('Done');
+  },1500);
+}
+setTimeout(function(){
+  console.log('timer called');
+  fetchData(text=>{
+    console.log(text);
+  })
+},2000);  //callback async function
+// first timeout function is called after 2 seconds timer called and after 1.5 sec Done
+
+console.log('Hello'); //synchronus call
+console.log('world');*/
+const fetchData=()=>{
+  const promise=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve('Done');
+    },1500);
+  });
+  return promise;
+}
+setTimeout(function(){
+  console.log('timer called');
+  fetchData().then(text=>{
+    console.log(text);
+    return fetchData();
+  }).then(text2=>{
+    console.log("this is second time:"+text2);
+  });
+},2000);  //callback async function
+
+console.log('Hello'); //synchronus call
+console.log('world');
+
+//output of this ResultCode
+// Hello
+// world
+// timer called
+// Done
+// this is second time:Done
