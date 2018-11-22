@@ -1,0 +1,63 @@
+let name="Amol"
+let age=31;
+
+const person={
+  city:'pune',
+  pin:412206,
+  get:function(){return 'I am '+name;}
+}
+
+const {city,pin}=person; //Deconstructing
+console.log(city,pin);
+
+//way of function writing
+function printName({city}){
+  console.log('PrintCity:'+city);
+}
+printName(person); //PrintCity:pune
+
+const add=(a,b)=>a+b;
+console.log(add(2,4)); //6
+console.log(person.get());
+const getDetails=(n,a,per)=>{
+    return ('Name is:'+n+'Age is:'+a+'object :'+per.pin);
+}
+console.log(getDetails(name,age,person));
+
+//************ ARRAY Handling **********
+
+const hobbies=['sports','singing','travel'];
+for(let hob in hobbies)
+{
+  console.log('hobbe'+hobbies[hob]);
+}
+//hobbesports hobbesinging fhobbetravel
+
+console.log(hobbies.map(hob=>'hobbie :'+hob));
+//[ 'hobbie :sports', 'hobbie :singing', 'hobbie :travel' ]
+hobbies.push('programming')
+console.log(hobbies);
+
+const [hob1,hob2,hob3]=hobbies;
+console.log(hob1,hob2,hob3);
+
+const copyArray=[hobbies];
+console.log(copyArray); //[ [ 'sports', 'singing', 'travel', 'programming' ] ]
+
+//********** SPREAD and REST *************
+
+const copyArray1=[...hobbies]; //spread
+console.log(copyArray1); //[ 'sports', 'singing', 'travel', 'programming' ]
+
+const copyPerson={...person}
+console.log(copyPerson);
+
+const toArray=(arg1,arg2,arg3)=>{ return [arg1,arg2,arg3];}
+console.log(toArray(1,2,3)); //[1,2,3]
+
+console.log(toArray(1,2,3,4)); //[1,2,3]
+
+const toArray1=(...arg)=>{ return arg;} //rest
+console.log(toArray1(1,2,3)); //[1,2,3]
+
+console.log(toArray1(1,2,3,4)); //[1,2,3,4]
