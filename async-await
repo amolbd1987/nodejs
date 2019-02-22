@@ -1,0 +1,19 @@
+const function1 = (req, res)=>{
+  const Arr = req.body;
+   await Promise.all(
+       Arr.map(async ele =>{         
+         console.log('Inside Map');
+         await delay();
+         console.log('After Delay');
+     })
+   );
+     console.log('After Map');
+}
+function delay(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log('inside delay');        
+            resolve(true);
+        }, 2000)
+    })
+    
