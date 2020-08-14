@@ -1,0 +1,6 @@
+create folder .ebextensions at root level
+create file 00-set-indiatimezone.config
+add command in config file
+container_commands:
+  time_zone:
+    command: ln -f -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
